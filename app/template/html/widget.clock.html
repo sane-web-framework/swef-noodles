@@ -1,0 +1,43 @@
+<?php
+if (isset($_ARGS) && array_key_exists(1,$_ARGS)) {
+    $mode           = $_ARGS[1];
+
+}
+elseif (isset($_GET)&& array_key_exists('mode',$_GET)) {
+    $mode           = $_GET['mode'];
+}
+else {
+    $mode           = 24;
+}
+if ($mode==12) {
+        $format     = 'h:i:s';
+}
+else {
+        $format     = 'H:i:s';
+}
+?>
+<pre>
+<?php echo htmlentities(__FILE__); ?> is the original basic clock widget [endpoint=<?php echo htmlentities ($this->endpoint); ?>].
+A SWEF widget is not different in technology from an endpoint but categorises an endpoint as purposed for collection by javascript HTTP requests.
+If the widget outputs HTML, it can be pulled like any other endpoint (most browsers will render incomplete HTML which means you can inspect the output directly in a browser).
+This script could be modified or replaced to use JSON communication - or alternatively one might deploy the built-in (eventually) JSON API (obviously it could not then be pulled when serving HTML pages).
+<p>swef->moment construction time:</p>
+<div class="widget widget-clock">
+  <div class="clock clock-data">
+    <label for="">Data time:</label>
+    <span class="time clock-data"><?php echo htmlentities ($this->swef->moment->data($format)); ?></span>
+    <label for="">Data datetime:</label>
+    <span class="datetime clock-data"><?php echo htmlentities ($this->swef->moment->data('Y m dj '.$format)); ?></span>
+  </div>
+  <div class="clock clock-server">
+    <label for="">Server time:</label>
+    <span class="time clock-server"><?php echo htmlentities ($this->swef->moment->server($format)); ?></span>
+    <label for="">Server datetime:</label>
+    <span class="datetime clock-server"><?php echo htmlentities ($this->swef->moment->server('Y m dj '.$format)); ?></span>
+  </div>
+  <div class="clock clock-client">
+    <label for="">Client time:</label>
+    <span class="datetime clock-client"><?php echo htmlentities ($this->swef->moment->client($format)); ?></span>
+    <label for="">Client datetime:</label>
+    <span class="datetime clock-client"><?php echo htmlentities ($this->swef->moment->client('Y m dj '.$format)); ?>  </div>
+</div>
