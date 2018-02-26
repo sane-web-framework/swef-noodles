@@ -1,8 +1,8 @@
 
-swef-core
----------
+swef-noodles
+------------
 
-swef-core is a component project of sane-web-framework (Swef).
+swef-noodles is a component project of sane-web-framework (Swef).
 
 
 Getting started
