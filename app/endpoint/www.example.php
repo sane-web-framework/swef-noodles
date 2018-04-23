@@ -1,6 +1,6 @@
 <?php $this->titleSet ('Example'); ?>
 
-<?php echo htmlentities ('This is file '.__FILE__.SWEF_STR__CRLF); ?>
+<?php echo htmlspecialchars ('This is file '.__FILE__.SWEF_STR__CRLF); ?>
 
 <pre>
     THIS EXAMPLE

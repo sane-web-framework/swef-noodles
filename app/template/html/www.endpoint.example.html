@@ -1,5 +1,5 @@
 <p>This is a pulled endpoint example</p>
-<pre>__FILE__ = <?php echo htmlentities (__FILE__); ?></pre>
+<pre>__FILE__ = <?php echo htmlspecialchars (__FILE__); ?></pre>
 <p>Variables passed to this endpoint:</p>
 <pre>$_argv = <?php print_r ($_argv); ?></pre>
 <p>Pulled endpoints can pull more endpoints (all endpoints must comply with at least one router policy)</p>
